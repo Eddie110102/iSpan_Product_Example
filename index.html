@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>網頁設計入門-參考範例</title>
+    <!-- font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- 引入CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  </head>
+  <body>
+    <!-- 導覽列(選單) -->
+    <header>
+      <!-- icon -->
+      <a href="#">
+        <div class="logo">
+          <img src="./images/pblogo.png" alt="" />
+        </div>
+      </a>
+      <!-- nav -->
+      <nav class="mainNav">
+        <ul>
+          <li><a href="#">課程</a></li>
+          <li><a href="#">商城</a></li>
+          <li><a href="#">訂閱</a></li>
+          <li><a href="#">活動</a></li>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <li><a href="#">登入/註冊</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 輪播牆顯示區塊 ( 一個網頁可以有多個<nav> ) -->
+    <nav class="sliderArea">
+      <!-- 單一輪播項目的顯示範圍 -->
+      <div class="sliderBox">
+        <!-- 單一輪播牆的遮罩形狀 -->
+        <div class="sliderMask">
+          <img src="./images/rainbowFun_winter.png" alt="彩虹牧場" />
+        </div>
+        <div class="sliderMask sliderMain">
+          <img src="./images/longterm.png" alt="養成班" />
+        </div>
+        <div class="sliderMask">
+          <img src="./images/leaseBanner.png" alt="場地租借" />
+        </div>
+      </div>
+      <div class="sliderBtn">
+        <ul>
+          <li><i class="far fa-circle"></i></li>
+          <li><i class="far fa-circle activeBtn"></i></li>
+          <li><i class="far fa-circle"></i></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 主內容 -->
+    <main id="main">
+      <!-- 篩選器、搜尋列 -->
+      <div class="ControlBox">
+        <div class="selectBox">
+          <select name="course" id="course">
+            <option value="0" hidden>課程分類</option>
+            <option value="1">項目一</option>
+            <option value="2">項目二</option>
+            <option value="3">項目三</option>
+          </select>
+          <select name="coach" id="coach">
+            <option value="0" hidden>教練</option>
+            <option value="1">項目一</option>
+            <option value="2">項目二</option>
+            <option value="3">項目三</option>
+          </select>
+          <select name="level" id="level">
+            <option value="0" hidden>難易度</option>
+            <option value="1">項目一</option>
+            <option value="2">項目二</option>
+            <option value="3">項目三</option>
+          </select>
+        </div>
+        <div class="searchBox">
+          <input type="text" placeholder="關鍵字搜尋" />
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </div>
+      <!-- 控制列2 -->
+      <div class="controlBox_2">
+        <!-- 排序方式 -->
+        <div class="sort">
+          <label for="a">排序方式：</label>
+          <select name="sortSelect" id="a">
+            <option value="time">發佈時間</option>
+            <option value="liked">收藏數量</option>
+          </select>
+        </div>
+        <!-- 收藏 -->
+        <div class="liked btnBorder">
+          <i class="fa-regular fa-heart"></i>
+          <p>我的收藏清單</p>
+        </div>
+        <!-- 待播清單 -->
+        <div class="myList btnBorder">
+          <img src="./images/play-list-MainColor.png" alt="" />
+          <p>我的待播清單</p>
+        </div>
+      </div>
+      <!-- 卡片區塊 -->
+      <div class="cardBox" id="cardBox">
+        <!-- <div class="card">
+          卡片圖片、圓形圖片
+          <div class="imgBox">
+            <img src="./images/courseImg.jpg" alt="course">
+            <div class="circleImgBox">
+              <img src="./images/user.jpg" alt="user" class="circleImg">
+            </div>
+            <div class="myListIcon">
+              <img src="./images/play-list-bg.png" alt="">
+            </div>
+          </div>
+          卡片文字
+          <div class="cardTextBox">
+            <p class="cardTag">標籤</p>
+            <h2 class="cardTitle">卡片標題</h2>
+            <div class="cardInfo">
+              <span class="cardView">觀看次數：399</span>
+              <span class="cardDate">2023-03-23</span>
+              <span class="cardLike"><i class="fa-regular fa-heart"></i> 199</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </main>
+    <footer>
+      <p>本網頁所載的資料、商標、雕製、圖像、短片、聲音檔案、連結及其他資料等，以下簡稱為「 資料 」，只供資展國際(原資策會)專題發表使用，如有侵權，請聯繫eddiewang@ispan.com.tw，會立即下架，謝謝。</p>
+      <small>&copy;資展國際股份有限公司 iSpan 2023</small>
+    </footer>
+    <!-- 使用JS隨機渲染卡片數量 -->
+    <script src="randomCard.js"></script>
+    <!-- 畫面寬度改變 -->
+    <!-- <script src="resize.js"></script> -->
+  </body>
+</html>
